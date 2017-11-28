@@ -82,11 +82,11 @@ export default class AnalyticsPlugin {
    *
    * @throws Error - If already defined
    */
-  injectGlobalDimension (dimensionNumber, value) {
+  injectGlobalDimension (dimensionNumber, value, readOnly = true) {
     logDebug('Trying dimension Injection...', { dimensionNumber, value })
 
-    // Test if dimension already registered
-    if (pluginConfig.globalDimensions.find(el => el.dimension === dimensionNumber)) {
+    // Test if dimension already registered and read only
+    if (readOnly && pluginConfig.globalDimensions.find(el => el.dimension === dimensionNumber)) {
       throw new Error('VueAnalytics : Dimension already registered')
     }
 

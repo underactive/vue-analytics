@@ -138,7 +138,7 @@ const myRoute = {
    * @param {string|null} timingLabel -  A string that can be used to add flexibility in visualizing user timings in the reports (e.g. 'Google CDN').
    */
 ```
-### injectGlobalDimension (dimensionNumber, value)
+### injectGlobalDimension (dimensionNumber, value, readOnly = true)
 ```javascript
   /**
    * Inject a new GlobalDimension that will be sent every time.
@@ -147,8 +147,9 @@ const myRoute = {
    *
    * @param {int} dimensionNumber
    * @param {string|int} value
+   * @param {boolean} readOnly
    * 
-   * @throws Error - If already defined
+   * @throws Error - If already defined and readOnly is true
    */
 ```
 
