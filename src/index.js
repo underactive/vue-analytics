@@ -38,8 +38,8 @@ const install = function (Vue, initConf = {}) {
   })
 
   // set app name and version
-  ga('set', 'appName', initConf.appName)
-  ga('set', 'appVersion', initConf.appVersion)
+  if (Object.prototype.hasOwnProperty.call(initConf, 'appName')) ga('set', 'appName', initConf.appName)
+  if (Object.prototype.hasOwnProperty.call(initConf, 'appVersion')) ga('set', 'appVersion', initConf.appVersion)
 
   // Inject global dimensions
   if (initConf.globalDimensions) {

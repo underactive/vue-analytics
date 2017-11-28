@@ -11,7 +11,7 @@ export const logDebug = function (message) {
 }
 
 export const checkMandatoryParams = function (params) {
-  const mandatoryParams = [ 'trackingId', 'appName', 'appVersion' ]
+  const mandatoryParams = [ 'trackingId' ]
 
   mandatoryParams.forEach(el => {
     if (!params[ el ]) throw new Error(`VueAnalytics : Please provide a "${el}" from the config.`)
