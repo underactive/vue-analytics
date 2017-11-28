@@ -105,7 +105,7 @@ const myRoute = {
 
 ## API reference
 
-### trackEvent (category, action = null, label = null, value = null)
+### trackEvent (category, action = null, label = null, value = null, fieldsObject)
 ```javascript
   /**
    * Dispatch an analytics event.
@@ -115,6 +115,7 @@ const myRoute = {
    * @param action
    * @param label
    * @param value
+   * @param fieldsObject - Used for passing non-interaction events
    */
 ```
 

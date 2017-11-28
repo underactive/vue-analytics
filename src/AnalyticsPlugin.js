@@ -29,11 +29,11 @@ export default class AnalyticsPlugin {
    * @param label
    * @param value
    */
-  trackEvent (category, action = null, label = null, value = null) {
+  trackEvent (category, action = null, label = null, value = null, fieldsObject) {
     // TODO : FieldObject is full syntax, refactor this at one moment
     logDebug('Dispatching event', { category, action, label, value })
 
-    ga('send', 'event', category, action, label, value)
+    ga('send', 'event', category, action, label, value, fieldsObject)
   }
 
   /**
