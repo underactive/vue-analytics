@@ -28,3 +28,15 @@ export const cordovaApp = {
     ga('set', 'checkProtocolTask', null)
   }
 }
+
+/**
+ * Provide promises
+ */
+export class Deferred {
+  constructor() {
+    this.promise = new Promise((resolve, reject) => {
+      this.reject = reject;
+      this.resolve = resolve;
+    });
+  }
+}

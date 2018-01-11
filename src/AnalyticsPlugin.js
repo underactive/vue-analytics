@@ -1,4 +1,4 @@
-import { logDebug } from './utils'
+import { logDebug, Deferred } from './utils'
 import pluginConfig from './config'
 
 /**
@@ -132,5 +132,18 @@ export default class AnalyticsPlugin {
   changeSessionLanguage (code) {
     logDebug(`Changing application localisation & language to ${code}`)
     ga('set', 'language', code)
+  }
+
+  /**
+   * Get the Client ID
+   */
+  getClientId () {
+    logDebug('Getting client ID...')
+    const deferred = new Deferred();
+    let clientId = null
+    ga(function (tracker) {
+      deferred.resolve(tracker.get('clientId'))
+    });
+    return deferred.promise
   }
 }
