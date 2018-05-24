@@ -22,6 +22,20 @@ export default class AnalyticsPlugin {
   }
 
   /**
+   * @description Track a page view with title
+   * @param {any} name
+   * @param {string} title
+   * @memberof AnalyticsPlugin
+   */
+  trackPage (name, title) {
+    logDebug('Dispatching trackPage', { name, title })
+
+    ga('set', 'page', name)
+    ga('set', 'title', title)
+    ga('send', 'pageview')
+  }
+
+  /**
    * Dispatch an analytics event
    *
    * @param category
