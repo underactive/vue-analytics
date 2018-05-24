@@ -86,8 +86,7 @@ const initVueRouterGuard = function (Vue, vueRouter, ignoredViews, trackPage) {
     }
 
     // Dispatch vue event using meta analytics value if defined otherwise fallback to route name
-    // Adding a timeout if using components that change things like the Title
-    setTimeout(function(){ Vue.analytics.trackView(to.meta.analytics || to.fullPath, trackPage) }, 150);
+    Vue.analytics.trackView(to.meta.analytics || to.name, trackPage)
   })
 
   return ignoredViews
